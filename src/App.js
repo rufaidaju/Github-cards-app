@@ -1,15 +1,12 @@
+import React from 'react';
 import './App.css';
 
-function App(props) {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          {props.title}
-        </p>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  render(){
+    return(
+      <div className="header">{this.props.title}</div>
+    )
+  }
 }
 
 export default App;
