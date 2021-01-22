@@ -1,11 +1,11 @@
 import './App.css';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <header className="App-header">
         <p>
-          E
+          {props.title}
         </p>
       </header>
     </div>
