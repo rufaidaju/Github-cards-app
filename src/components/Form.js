@@ -25,7 +25,7 @@ class Form extends React.Component {
                 onChange= {(event)=>{this.setState({ userName : event.target.value})}}
                 required
                 />
-                <button>Add Card</button>
+                <button style={{marginLeft:'5px'}}>Add Card</button>
             </form>
         )
     }
