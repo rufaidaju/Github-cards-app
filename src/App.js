@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import CardsList from './components/CardsList'
+import Form from './components/Form'
+import CardsList from './components/CardsList';
 
 const testData = [
   {
@@ -25,6 +26,7 @@ class App extends React.Component{
     return(
     <div>
       <div className="header">{this.props.title}</div>
+      <Form />
       <CardsList profiles={testData}/>
     </div>
     )
