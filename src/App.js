@@ -3,31 +3,26 @@ import './App.css';
 import Form from './components/Form'
 import CardsList from './components/CardsList';
 
-const testData = [
-  {
-  name: "Tom Preston-Werner",
-  avatar_url:"https://avatars.githubusercontent.com/u/2?v=4",
-  company:"@chatterbugapp, @redwood…reston-werner-ventures "
-  },
-  {
-      name: "PJ",
-      avatar_url:"https://avatars.githubusercontent.com/u/3?v=4",
-      company:"@Github "
-  },
-  {
-      name: "Ryu kde",
-      avatar_url:"https://avatars.githubusercontent.com/u/38?v=4",
-      company:"@chatreston-werneures "
-  }    
-];
-
 class App extends React.Component{
+  state = {
+    cardList : []
+  }
+
+  addProfileToCardsList= (newProfile)=>{
+    this.setState((prevState)=>({
+      cardList : [...prevState.cardList, newProfile]
+    })
+    )
+    console.log('afteradd',this.state.cardList)
+  }
+    
+
   render(){
     return(
     <div>
       <div className="header">{this.props.title}</div>
-      <Form />
-      <CardsList profiles={testData}/>
+      <Form  onSubmit={this.addProfileToCardsList}/>
+      <CardsList profiles={this.state.cardList}/>
     </div>
     )
   }
