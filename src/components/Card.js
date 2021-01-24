@@ -1,4 +1,6 @@
 import React from 'react';
+import '../App.css';
+
 
 class Card extends React.Component{
     render(){
