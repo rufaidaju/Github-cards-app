@@ -12,14 +12,18 @@ const testData = [
         name: "PJ",
         avatar_url:"https://avatars.githubusercontent.com/u/3?v=4",
         company:"@Github "
-        }
+    },
+    {
+        name: "Ryu kde",
+        avatar_url:"https://avatars.githubusercontent.com/u/38?v=4",
+        company:"@chatreston-werneures "
+    }    
 ];
 
 function CardsList(){
     return(
         <div>
-            <Card {...testData[0]}/>
-            <Card {...testData[1]}/>
+            { testData.map(profile => <Card {...profile} /> )}
         </div>
     )
 }
