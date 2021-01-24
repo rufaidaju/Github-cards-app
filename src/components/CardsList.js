@@ -6,7 +6,7 @@ import '../App.css';
 function CardsList(props){
     return(
         <div className="card-list"> 
-            { props.profiles.map(profile => <Card {...profile} /> )}
+            { props.profiles.map(profile => <Card key={profile.id} {...profile} /> )}
         </div>
     )
 }
