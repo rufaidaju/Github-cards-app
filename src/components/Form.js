@@ -4,28 +4,28 @@ const axios = require('axios');
 
 class Form extends React.Component {
     state = {
-        userName : ''
+        userName: ''
     }
-    handleSubmit = async(event)=>{
+    handleSubmit = async (event) => {
         event.preventDefault();
         console.log(this.state.userName);
         const response = await axios.get(`https://api.github.com/users/${this.state.userName}`);
         const profile = response.data;
         this.props.onSubmit(profile);
-        this.setState({userName :''})
-       
+        this.setState({ userName: '' })
+
     }
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input 
-                type="text"
-                placeholder="Gitub user name" 
-                value={this.state.userName}
-                onChange= {(event)=>{this.setState({ userName : event.target.value})}}
-                required
+                <input
+                    type="text"
+                    placeholder="Gitub user name"
+                    value={this.state.userName}
+                    onChange={(event) => { this.setState({ userName: event.target.value }) }}
+                    required
                 />
-                <button style={{marginLeft:'5px'}}>Add Card</button>
+                <button style={{ marginLeft: '5px' }}>Add Card</button>
             </form>
         )
     }
