@@ -1,9 +1,11 @@
 import React from 'react';
-import Card from './Card'
+import Card from './Card';
+import '../App.css';
+
 
 function CardsList(props){
     return(
-        <div>
+        <div className="card-list"> 
             { props.profiles.map(profile => <Card {...profile} /> )}
         </div>
     )
