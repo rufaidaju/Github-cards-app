@@ -1,13 +1,17 @@
-import React from 'react'
+import React from 'react';
+const axios = require('axios');
 
 
 class Form extends React.Component {
     state = {
         userName : ''
     }
-    handleSubmit = (event)=>{
+    handleSubmit = async(event)=>{
         event.preventDefault();
-        console.log(this.state.userName)
+        console.log(this.state.userName);
+        const response = await axios.get(`https://api.github.com/users/${this.state.userName}`);
+        const profile = response.data;
+        console.log(response,'øøø')
     }
     render() {
         return (
