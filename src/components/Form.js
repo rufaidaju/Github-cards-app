@@ -8,11 +8,15 @@ class Form extends React.Component {
     }
 
     handleSubmit = async (event) => {
-        event.preventDefault();
-        const response = await axios.get(`https://api.github.com/users/${this.state.userName}`);
-        const profile = response.data;
-        this.props.onSubmit(profile);
-        this.setState({ userName: '' })
+        try {
+            event.preventDefault();
+            const response = await axios.get(`https://api.github.com/users/${this.state.userName}`);
+            const profile = response.data;
+            this.props.onSubmit(profile);
+            this.setState({ userName: '' })
+        } catch (error) {
+            console.log('Oooops error', error)
+        }
     }
 
     render() {
